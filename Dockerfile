@@ -14,11 +14,13 @@ RUN apk update \
 	&& rm -rf /var/cache/apk/*
 
 # git-bzr-helper
-RUN wget https://raw.github.com/felipec/git-remote-bzr/master/git-remote-bzr -O /usr/local/bin/git-remote-bzr \
+RUN wget https://raw.github.com/felipec/git-remote-bzr/master/git-remote-bzr \
+    -O /usr/local/bin/git-remote-bzr \
 	&& chmod 755 /usr/local/bin/git-remote-bzr
 
 # git-hg-helper
-RUN wget https://raw.github.com/felipec/git-remote-hg/master/git-remote-hg -O /usr/local/bin/git-remote-hg \
+RUN wget https://raw.github.com/felipec/git-remote-hg/master/git-remote-hg \
+    -O /usr/local/bin/git-remote-hg \
 	&& chmod 755 /usr/local/bin/git-remote-hg
 
 # python-requests
@@ -36,7 +38,8 @@ RUN git clone --depth 1 https://github.com/alexvh/python-gitlab3.git \
 	&& cd .. && rm -rf python-gitlab3
 
 WORKDIR /
-RUN git clone --depth 1 https://github.com/samrocketman/gitlab-mirrors.git ${GITLAB_MIRROR_INSTALL_DIR}
+RUN git clone --depth 1 https://github.com/samrocketman/gitlab-mirrors.git \
+    ${GITLAB_MIRROR_INSTALL_DIR}
 
 RUN echo 'env_keep+=SSH_AUTH_SOCK' >> /etc/visudo
 
