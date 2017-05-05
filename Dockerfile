@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER Mark Riedesel <mark@klowner.com>
+MAINTAINER René Milk <rene@milk.pm>
 
 ENV GITLAB_MIRROR_ASSETS=/assets \
 	GITLAB_MIRROR_USER=git \
@@ -32,7 +32,7 @@ RUN git clone --depth 1 https://github.com/kennethreitz/requests.git \
 
 # python-gitlab3
 WORKDIR /tmp
-RUN git clone --depth 1 https://github.com/alexvh/python-gitlab3.git \
+RUN git clone --depth 1 https://github.com/doctormo/python-gitlab3 \
 	&& cd python-gitlab3 \
 	&& python setup.py install \
 	&& cd .. && rm -rf python-gitlab3
