@@ -3,6 +3,7 @@
 #
 # gitlab-mirrors settings
 #
+set -eu
 
 #The user git-mirrors will run as.
 system_user="{{GITLAB_MIRROR_USER}}"
@@ -41,7 +42,7 @@ gitlab_url="{{GITLAB_MIRROR_GITLAB_URL}}"
 #and admin the $gitlab_namespace group.
 gitlab_user="{{GITLAB_MIRROR_GITLAB_USER}}"
 #Generate a token for your $gitlab_user and set it here.
-gitlab_user_token_secret="$(head -n1 "${user_home}/private_token" 2> /dev/null || echo "")"
+gitlab_user_token_secret="$(head -n1 "${user_home}/private_token")"
 #Verify signed SSL certificates?
 ssl_verify={{GITLAB_MIRROR_SSL_VERIFY}}
 #Push to GitLab over http?  Otherwise will push projects via SSH.
@@ -59,3 +60,5 @@ wiki_enabled={{GITLAB_MIRROR_NEW_WIKI_ENABLED}}
 snippets_enabled={{GITLAB_MIRROR_NEW_SNIPPETS_ENABLED}}
 merge_requests_enabled={{GITLAB_MIRROR_NEW_MERGE_REQUESTS_ENABLED}}
 public={{GITLAB_MIRROR_NEW_PUBLIC}}
+
+set +eu
