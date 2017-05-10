@@ -38,7 +38,7 @@ RUN git clone --depth 1 https://github.com/doctormo/python-gitlab3 \
 	&& cd .. && rm -rf python-gitlab3
 
 WORKDIR /
-RUN git clone --depth 1 https://github.com/samrocketman/gitlab-mirrors.git \
+RUN git clone --depth 1 https://github.com/renemilk/gitlab-mirrors.git \
     ${GITLAB_MIRROR_INSTALL_DIR}
 
 RUN echo 'env_keep+=SSH_AUTH_SOCK' >> /etc/visudo
