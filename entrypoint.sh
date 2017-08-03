@@ -50,7 +50,3 @@ case ${1} in
 		;;
 esac
 
-if [[ -z $1 ]]
-then
-	exec bash
-fi
