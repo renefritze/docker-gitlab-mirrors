@@ -6,9 +6,8 @@ This is [samrocketman/gitlab-mirrors](https://github.com/samrocketman/gitlab-mir
 based on Alpine Linux.
 
 ## Quick-start
-Automated builds are available from [quay.io](https://quay.io)
 ```bash
-docker pull renemilk/gitlab-mirrors:latest
+docker pull renefritze/gitlab-mirrors:latest
 ```
 The `/config` volume serves as the `$HOME` for the container's user. A few files are required for this container to work.
 - `/config/.ssh/config`: any custom ssh configuration you need when connecting to the GitLab server. (See the ssh/config example further down the page).
